@@ -1,41 +1,20 @@
-# Homelab Portfolio — SOC & Network Engineering
+# Homelab journal
 
-Personal portfolio project: design, harden, segment, and monitor a home network while documenting decisions like production engineering work.
+I’m building a home lab to grow toward two roles I care about: **network technician** and **SOC analyst**. The network is the classroom—routing, segmentation, and DNS are as important to me as the detection stack on top. I want to show that I can design something defensible, operate it, and explain *why* it’s built that way, not just paste screenshots.
 
-## Goals
+**What I’m aiming for**
 
-- **Network technician:** VLANs, subnetting, routing, DNS, VPN, troubleshooting, and clean documentation.
-- **SOC analyst:** Visibility (logs, alerts), detection (IDS/IPS, SIEM-style workflows), and triage (hypothesis → evidence → conclusion).
+- Solid layer-3 and VLAN discipline: clear boundaries between trusted users, servers, IoT, and guests, with least privilege between them.
+- An edge I control: OPNsense for policy, NAT, VPN, and eventually Suricata in a state I can tune without taking the house offline for a week.
+- Visibility that matches how SOC work actually feels—logs that answer questions, alerts I can triage, and tools (Wazuh, DNS insight, and room for NSM or honeypots later) that don’t run on vibes alone.
+- A habit of writing things down: design, test, rollback plan, and what broke. That’s as much the portfolio as the VLANs.
 
-## Repository layout
+**Where this repo fits**
 
-| Path | Purpose |
-|------|---------|
-| `docs/assets.md` | Inventory of hardware and software (source of truth). |
-| `docs/topology.md` | Logical network design and VLAN intent. |
-| `reports/` | Milestone write-ups (design, verification, rollback, lessons learned). |
+This is the public face of that work. The [topology](docs/topology.md) and [asset notes](docs/assets.md) describe the logical design without exposing how I address things at home. Deeper milestone write-ups live under `reports/` as I complete phases—each one is meant to read like a short engineering note, not a tutorial.
 
-Each milestone should be a **merge request** or a dated folder under `reports/` with enough detail that someone else could reproduce or audit your work.
+**Rough direction on the bench**
 
-## Quick links
+UniFi switching and WiFi tie VLANs to the access layer; a dual-NIC host runs OPNsense at the edge. Down the road: central logging and agents, DNS filtering with something I can query, optional NSM or deception on isolated segments, and private storage for configs and snapshots so I can roll back when an experiment goes wrong.
 
-- [Asset list](docs/assets.md)
-- [Topology](docs/topology.md)
-
-## Stack (high level)
-
-- **Edge:** OPNsense on a dual-NIC host — firewall, routing, VPN, Suricata when tuned.
-- **Access:** UniFi switch and WiFi 6 AP — trunks, PoE, SSIDs mapped to VLANs.
-- **Optional:** UniFi Cloud Gateway — see [topology](docs/topology.md) if both UniFi and OPNsense are in path.
-- **Visibility:** Wazuh, DNS filtering / logging, optional NSM and honeypots on isolated VLANs.
-- **Backups:** Private cloud storage for configs and snapshots (not committed here).
-
-## How to use this repo
-
-1. Update `docs/assets.md` whenever you add or retire a system.
-2. After each stable change, add a **report** under `reports/YYYY-MM-DD-short-name/` with objective, design, verification, and rollback.
-3. **Never commit secrets** — use placeholders and sanitize configs (see `.gitignore`).
-
-## Author
-
-Aspiring SOC analyst & network technician — progress documented for learning and hiring conversations.
+I’m early in the build. Commits here are honest progress, not a finished datacenter—and that’s the point.
