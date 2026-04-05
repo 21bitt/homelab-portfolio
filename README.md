@@ -20,15 +20,15 @@ Each milestone should be a **merge request** or a dated folder under `reports/` 
 ## Quick links
 
 - [Asset list](docs/assets.md)
-- [Ideal topology](docs/topology.md)
+- [Topology](docs/topology.md)
 
 ## Stack (high level)
 
-- **Edge firewall / routing:** OPNsense (Beelink, dual NIC) — primary policy and IDS/IPS (Suricata) where applicable.
-- **Switching & WiFi:** UniFi Switch Ultra + UniFi U6+ Access Point — VLANs to the edge, SSID-to-VLAN mapping, PoE for the AP.
-- **Optional / alternate edge:** UniFi Cloud Gateway — see topology doc for placement options (avoid accidental double NAT without documenting it).
-- **Visibility:** Wazuh, DNS (Pi-hole or Unbound), optional Security Onion / honeypots on isolated segments.
-- **Artifacts & backups:** Personal cloud (e.g. Nextcloud) for configs, exports, and golden images.
+- **Edge:** OPNsense on a dual-NIC host — firewall, routing, VPN, Suricata when tuned.
+- **Access:** UniFi switch and WiFi 6 AP — trunks, PoE, SSIDs mapped to VLANs.
+- **Optional:** UniFi Cloud Gateway — see [topology](docs/topology.md) if both UniFi and OPNsense are in path.
+- **Visibility:** Wazuh, DNS filtering / logging, optional NSM and honeypots on isolated VLANs.
+- **Backups:** Private cloud storage for configs and snapshots (not committed here).
 
 ## How to use this repo
 

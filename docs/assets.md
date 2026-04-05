@@ -1,29 +1,33 @@
-# Asset list
+# Hardware and services
 
-Maintain a single source of truth. Update this file when hardware or services change.
+Rough inventory for this lab. Roles matter more than model numbers for understanding the design.
 
-| Asset | Role | Notes |
-|-------|------|--------|
-| **T-Mobile gateway** | ISP modem / CPE | WAN uplink; may be CGNAT; double NAT possible behind OPNsense. |
-| **Beelink mini PC (dual NIC)** | **OPNsense** router/firewall | Edge policy, IDS/IPS (Suricata), VPN, inter-VLAN routing. |
-| **UniFi Cloud Gateway** | UniFi gateway / UniFi OS | See [topology](topology.md) — optional alternate edge or downstream placement; avoid undocumented double NAT. |
-| **UniFi Switch Ultra** | Managed L2/L3-capable switch | VLAN trunk to OPNsense, PoE for AP, wired homelab devices. |
-| **UniFi U6+ Access Point** | WiFi 6 AP | Map SSIDs to VLANs (e.g. LAN, IoT, guest). |
-| **Custom PC** | Admin / analysis workstation | SSH, browser to UIs, MobaXterm or Windows Terminal; prefer management VLAN access. |
-| **Pi-hole / DNS** (optional placement) | DNS filtering & query logging | Often VM or Pi; may integrate with OPNsense. |
-| **Wazuh** (planned) | SIEM / agent telemetry | Typically one server + agents on key hosts. |
-| **Security Onion** (planned) | NSM / PCAP / analyst workflows | Heavy; usually dedicated VM + mirror port if used. |
-| **Honeypot** (planned) | Deception / telemetry | Isolated VLAN; document egress and safety. |
-| **Nextcloud** (planned) | Personal cloud & backups | Config exports, lab notes, images, Git bundles. |
-| **Tailscale / VPN** (planned) | Remote secure admin | Prefer over exposing SSH to the public internet. |
+**Edge**
 
-## Software / access tools (workstation)
+- Dedicated **x86_64 host with two Ethernet interfaces** running **OPNsense** — routing, firewalling, VPN, and Suricata (IDS/IPS) at the perimeter.
+- **ISP gateway** — consumer broadband CPE; WAN is typically DHCP and may sit behind carrier NAT depending on the provider.
 
-| Tool | Use |
-|------|-----|
-| **MobaXterm / Windows Terminal + SSH** | Remote shell to OPNsense, Linux VMs, Pis — key-based auth. |
-| **Git** | Version control for this repo and lab journals. |
+**Access layer**
 
-## Retirement / spare
+- **UniFi Cloud Gateway** — optional; UniFi OS and routing in one box. Placement relative to OPNsense is documented in the topology note so double NAT is not accidental.
+- **UniFi Switch Ultra** — VLAN trunking, access ports, PoE for the AP.
+- **UniFi U6+** — WiFi 6 coverage; WLANs tied to VLANs for segmentation.
 
-- List decommissioned gear here with date so reports stay coherent.
+**Endpoints**
+
+- **Primary workstation** — day-to-day admin: SSH to appliances, browser to dashboards, terminal-based tooling. Management traffic is restricted where possible.
+
+**Security and visibility (rolled out over time)**
+
+- Central **DNS** (Pi-hole or resolver on the firewall) for filtering and query visibility.
+- **Wazuh** for host telemetry and alerting.
+- **Security Onion** or similar for NSM where resources allow.
+- **Honeypot** on an isolated segment with controlled egress.
+- **Remote access** via VPN or an overlay (e.g. Tailscale) instead of exposing management to the internet.
+
+**Ops**
+
+- **Personal cloud** (Nextcloud or equivalent) for offline backups of configs, exports, and VM snapshots.
+- **Git** for this repository and change history.
+
+Spare or retired gear gets a one-line note here when it drops out of the design so older reports still make sense.
