@@ -1,0 +1,20 @@
+# Secrets and local env
+.env
+*.pem
+*.key
+id_rsa*
+*.p12
+*.pfx
+
+# OS junk
+Thumbs.db
+Desktop.ini
+
+# Editor
+.idea/
+.vscode/
+
+# Sanitized exports: keep raw XML/offline backups OUT of git (store in Nextcloud)
+# Uncomment if you want to block accidental commits:
+# *-config.xml
+# *-backup.xml
