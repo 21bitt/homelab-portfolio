@@ -11,7 +11,7 @@ labels: milestone
 
 ## Acceptance criteria
 
-- [ ] Documented in `reports/`
+- [ ] Documented in `progress/` (dated `.md` file)
 - [ ] Assets/topology updated if needed
 
 ## Rollback plan

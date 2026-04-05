@@ -1,4 +1,4 @@
-# Milestone: &lt;short title&gt;
+# Milestone: <short title>
 
 **Date:** YYYY-MM-DD  
 **Status:** draft | verified | rolled back
