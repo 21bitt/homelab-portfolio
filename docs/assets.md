@@ -11,7 +11,7 @@ Rough inventory for this lab. Roles matter more than model numbers for understan
 
 - **UniFi Cloud Gateway** — optional; UniFi OS and routing in one box. Placement relative to OPNsense is documented in the topology note so double NAT is not accidental.
 - **UniFi Switch Ultra** — VLAN trunking, access ports, PoE for the AP.
-- **UniFi U6+** — WiFi 6 coverage; WLANs tied to VLANs for segmentation.
+- **UniFi U7 Lite** — WiFi 7 coverage; WLANs tied to VLANs for segmentation.
 
 **Endpoints**
 
