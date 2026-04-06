@@ -1,5 +1,7 @@
 # Milestone: OPNsense baseline and networking mental model
 
+> Conceptual learning notes only—no live subnets, device names, or exports. See [`docs/portfolio-scope.md`](../docs/portfolio-scope.md).
+
 **Date:** 2026-04-04  
 **Status:** draft
 

@@ -9,9 +9,9 @@ Confirm wireless clients receive DHCP from OPNsense and reach the internet throu
 
 ## Implementation summary
 
-- **Switch uplink:** port **8** to **OPNsense LAN** (management PC and other wired devices on the switch).
-- **UniFi:** Switch Ultra and **U7 Lite** adopted; firmware current; dashboard used for management.
-- **WiFi:** Internet access confirmed from wireless clients on the flat LAN (SSID on default/LAN scope).
+- **Switch uplink:** a **designated access-layer port** carries the LAN to **OPNsense**; other wired clients and the AP hang off the same switch (flat topology).
+- **UniFi:** Switch and **U7 Lite** adopted; firmware current; dashboard used for management.
+- **WiFi:** Internet access confirmed from wireless clients on the flat LAN (primary SSID on default/LAN scope).
 
 ## Verification
 
@@ -19,7 +19,7 @@ Confirm wireless clients receive DHCP from OPNsense and reach the internet throu
 
 ## Next steps
 
-1. Document or label **port 8** in UniFi as the future **trunk** to OPNsense when VLANs are added.
+1. In UniFi, **label the uplink port** to the firewall as the future **trunk** when VLANs are added (exact port number stays in private runbooks).
 2. **Paper plan:** VLAN names, purposes, internet vs isolated.
 3. **OPNsense:** VLANs + DHCP on the LAN parent toward the switch.
 4. **UniFi:** port **8** → **trunk** (tagged VLANs); map SSIDs/access ports; then **firewall** rules between segments.

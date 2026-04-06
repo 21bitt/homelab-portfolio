@@ -14,7 +14,8 @@ Desktop.ini
 .idea/
 .vscode/
 
-# Sanitized exports: keep raw XML/offline backups OUT of git (store in Nextcloud)
-# Uncomment if you want to block accidental commits:
-# *-config.xml
-# *-backup.xml
+# Config exports (never commit live firewall/router backups)
+*-config.xml
+*-backup.xml
+*.ovpn
+wireguard*.conf

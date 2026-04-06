@@ -32,6 +32,4 @@ flowchart TB
     SW --> ADM
 ```
 
-Details that change often (exact VLAN IDs, interface names, and addressing) stay in private runbooks and sanitized configs—not in this public repo.
-
-**Public documentation:** This repo states **design intent** (roles, trust boundaries, tool categories). It does **not** include live subnets, hostnames, credentials, VPN endpoints, or exports. Publishing that level of detail would add risk without helping a portfolio reader; keeping this layer abstract is deliberate and aligns with common practice for public write-ups.
+Operational detail (VLAN numbers, subnets, interface names, switch port assignments) stays in **private** notes. What appears here follows **[public portfolio scope](portfolio-scope.md)**.

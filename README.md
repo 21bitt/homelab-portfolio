@@ -1,6 +1,10 @@
 # Homelab journal
 
-I’m building a home lab to grow toward two roles I care about: **network technician** and **SOC analyst**. The network is the classroom—routing, segmentation, and DNS are as important to me as the detection stack on top. I want to show that I can design something defensible, operate it, and explain *why* it’s built that way, not just paste screenshots.
+I’m building a **residential lab** to grow toward two roles I care about: **network technician** and **SOC analyst**. The network is the classroom—routing, segmentation, and DNS are as important to me as the detection stack on top. I want to show that I can design something defensible, operate it, and explain *why* it’s built that way, not just paste screenshots.
+
+**What is public here**
+
+This repo is intentionally **abstract**: design intent, trust boundaries, and learning narrative—**not** live IPs, VLAN numbers, port maps, or configs. See **[public portfolio scope](docs/portfolio-scope.md)** for what belongs in GitHub vs private notes.
 
 **What I’m aiming for**
 
@@ -11,7 +15,7 @@ I’m building a home lab to grow toward two roles I care about: **network techn
 
 **Where this repo fits**
 
-This is the public face of that work. The [topology](docs/topology.md), [asset notes](docs/assets.md), and [wireless policy](docs/wireless.md) describe the logical design without exposing how I address things at home. Ongoing milestone write-ups live under [`progress/`](progress/) as dated `.md` files—each one is meant to read like a short engineering note, not a tutorial. Copy [`progress/TEMPLATE-milestone.md`](progress/TEMPLATE-milestone.md) for new entries.
+The [topology](docs/topology.md), [asset notes](docs/assets.md), and [wireless policy](docs/wireless.md) describe logical design. Ongoing summaries live under [`progress/`](progress/) as dated `.md` files (kept high-level per [portfolio scope](docs/portfolio-scope.md)). Copy [`progress/TEMPLATE-milestone.md`](progress/TEMPLATE-milestone.md) for new entries.
 
 **Rough direction on the bench**
 
