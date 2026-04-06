@@ -6,7 +6,9 @@ The lab is built around a single edge firewall so routing policy, NAT, and inspe
 
 **Access:** A UniFi switch uplinks to the firewall (trunk if multiple VLANs, or a flat LAN during early setup). A UniFi U7 Lite access point hangs off the switch with PoE. SSIDs map to VLANs so wireless clients land in the same trust zones as wired ones.
 
-**Segments:** Management, trusted user, servers, IoT, and guest are on separate VLANs with non-overlapping private address space. IoT and guest do not reach management or internal servers unless a rule explicitly allows it—usually DNS/NTP only where needed.
+**Segments (intent):** **Family** (trusted users), **guest**, **IoT**, **honeypot** (deliberately vulnerable lab targets), **management**, and **cloud storage** each get their own VLANs with non-overlapping private address space. Lower-trust segments (guest, IoT, honeypot) do not reach management, family, or storage unless a rule explicitly allows it—usually DNS/NTP only where needed.
+
+**Cloud storage VLAN:** Backups include security appliance and tooling configuration exports; that data is treated as high sensitivity. The storage segment is isolated so east–west access from IoT, guest, and honeypot is denied by default.
 
 If a UniFi Cloud Gateway is used in series with OPNsense, that adds another routing hop (often double NAT). That is fine for learning if it is documented; port forwards and remote access need to be traced through both layers.
 
@@ -31,3 +33,5 @@ flowchart TB
 ```
 
 Details that change often (exact VLAN IDs, interface names, and addressing) stay in private runbooks and sanitized configs—not in this public repo.
+
+**Public documentation:** This repo states **design intent** (roles, trust boundaries, tool categories). It does **not** include live subnets, hostnames, credentials, VPN endpoints, or exports. Publishing that level of detail would add risk without helping a portfolio reader; keeping this layer abstract is deliberate and aligns with common practice for public write-ups.
