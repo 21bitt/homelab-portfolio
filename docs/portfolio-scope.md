@@ -8,6 +8,7 @@ This repository is a **recruiter- and peer-facing** record of **design intent** 
 - **Architecture in words** — edge vs access vs segments, trust zones, “why OPNsense + UniFi,” future tools as *categories* (Suricata, Wazuh, NSM).
 - **Design decisions** — WPA3 policy, isolated backup/storage segment, honeypot on its own VLAN, least privilege between zones.
 - **Process** — milestones, verification mindset, rollback thinking, questions you asked yourself while learning.
+- **Study notes** (`docs/study/`) — conceptual layering and security *ideas* only; still no live numbering or exports.
 - **Product families** without serial numbers — e.g. “UniFi switch and WiFi 7 AP,” “dual-NIC OPNsense box.”
 
 ## What stays out of this repo (private runbooks only)

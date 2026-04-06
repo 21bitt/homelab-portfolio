@@ -15,7 +15,7 @@ This repo is intentionally **abstract**: design intent, trust boundaries, and le
 
 **Where this repo fits**
 
-The [topology](docs/topology.md), [asset notes](docs/assets.md), and [wireless policy](docs/wireless.md) describe logical design. Ongoing summaries live under [`progress/`](progress/) as dated `.md` files (kept high-level per [portfolio scope](docs/portfolio-scope.md)). Copy [`progress/TEMPLATE-milestone.md`](progress/TEMPLATE-milestone.md) for new entries.
+The [topology](docs/topology.md), [asset notes](docs/assets.md), and [wireless policy](docs/wireless.md) describe logical design. **[Study notes](docs/study/)** capture organized learning (L2/L3, segmentation, etc.) for recruiters and future me. Ongoing lab summaries live under [`progress/`](progress/) as dated `.md` files (kept high-level per [portfolio scope](docs/portfolio-scope.md)). Copy [`progress/TEMPLATE-milestone.md`](progress/TEMPLATE-milestone.md) for new entries.
 
 **Rough direction on the bench**
 
