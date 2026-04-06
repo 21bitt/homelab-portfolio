@@ -11,7 +11,7 @@ I’m building a home lab to grow toward two roles I care about: **network techn
 
 **Where this repo fits**
 
-This is the public face of that work. The [topology](docs/topology.md) and [asset notes](docs/assets.md) describe the logical design without exposing how I address things at home. Ongoing milestone write-ups live under [`progress/`](progress/) as dated `.md` files—each one is meant to read like a short engineering note, not a tutorial. Copy [`progress/TEMPLATE-milestone.md`](progress/TEMPLATE-milestone.md) for new entries.
+This is the public face of that work. The [topology](docs/topology.md), [asset notes](docs/assets.md), and [wireless policy](docs/wireless.md) describe the logical design without exposing how I address things at home. Ongoing milestone write-ups live under [`progress/`](progress/) as dated `.md` files—each one is meant to read like a short engineering note, not a tutorial. Copy [`progress/TEMPLATE-milestone.md`](progress/TEMPLATE-milestone.md) for new entries.
 
 **Rough direction on the bench**
 
